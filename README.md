@@ -1,4 +1,4 @@
-# ☀️ SOLANA — Summer Fashion E-Commerce
+# ☀️ CATANGIE — Summer Fashion E-Commerce
 
 **Madrid · SS26**
 
