@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOLANA — Summer in Madrid · SS26</title>
+  <meta name="description" content="SOLANA: Elevated summer fashion born from Madrid's golden light. Mini skirts, low-waist shorts, and belly-button tops for the season.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <span>☀️</span> SOLANA
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Collection</a></li>
+        <li><a href="cart.html" class="cart-link">🛒 Cart <span class="cart-count" id="cart-count">0</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-tag">☀️ Madrid · SS26</span>
+      <h1>
+        Summer That<br>
+        <em>Feels Like Gold</em>
+      </h1>
+      <p>
+        Born from Madrid's endless golden afternoons. Pieces designed to move with you —
+        from Plaza Mayor to an impromptu rooftop, under a sun that never quits.
+      </p>
+      <div class="hero-buttons">
+        <a href="products.html" class="btn btn-primary btn-lg">Shop the Collection</a>
+        <a href="#about" class="btn btn-outline btn-lg">Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COLLECTION PREVIEW ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>The Madrid Summer Collection</h2>
+        <p>Three essential pieces. Infinite ways to wear them.</p>
+      </div>
+      <div class="products-grid" id="featured-products">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY SOLANA ===== -->
+  <section class="section" style="background: var(--color-surface-alt);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Designed for Real Summer</h2>
+        <p>Every piece solves a problem Madrid summer throws at you.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card animate-on-scroll">
+          <span class="feature-icon">🩳</span>
+          <h3>Anti-Chafe Shorts</h3>
+          <p>Our FLOW SHORT sits low on the waist with a silky-soft inner panel so thighs glide — not rub. Made for long walks under the Spanish sun.</p>
+        </div>
+        <div class="feature-card animate-on-scroll">
+          <span class="feature-icon">🎨</span>
+          <h3>Wear It Your Way</h3>
+          <p>Each piece comes in multiple colorways. Mix, match, and make it yours. The SOL MINI alone comes in five sun-soaked shades.</p>
+        </div>
+        <div class="feature-card animate-on-scroll">
+          <span class="feature-icon">🌬️</span>
+          <h3>Breathable Fabrics</h3>
+          <p>Lightweight organic cotton and TENCEL™ blends that breathe in 38°C heat. You stay cool, you stay dry, you stay golden.</p>
+        </div>
+        <div class="feature-card animate-on-scroll">
+          <span class="feature-icon">♻️</span>
+          <h3>Ethically Made</h3>
+          <p>Produced in limited runs by family-owned ateliers in Spain and Portugal. No waste. No sweatshops. Just good clothes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT / MISSION ===== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="https://picsum.photos/seed/madridsummer/800/1000" alt="Madrid rooftop at golden hour" loading="lazy">
+        </div>
+        <div class="about-text">
+          <h2>From Madrid,<br>With Heat</h2>
+          <p>
+            SOLANA was born on a sweltering July afternoon in Malasaña. We looked around and realized:
+            summer in Madrid is its own beast — beautiful, intense, and demanding. The clothes had to keep up.
+          </p>
+          <p>
+            Every piece in this collection is named after something real. <em>Solana</em> — that patch of pavement
+            where the sun hits hardest. <em>Ombligo</em> — the belly button your top should graze.
+            <em>Flow</em> — what happens when thighs don't chafe. Fashion that actually works.
+          </p>
+          <a href="products.html" class="btn btn-primary">Explore the Full Collection →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="section" style="text-align: center;">
+    <div class="container">
+      <h2 style="margin-bottom: 12px;">Ready to Feel the Sun?</h2>
+      <p style="color: var(--color-text-light); font-size: 1.1rem; margin-bottom: 28px; max-width: 500px; margin-inline: auto;">
+        Free shipping on orders over €80. Easy returns within 30 days.
+      </p>
+      <a href="products.html" class="btn btn-primary btn-lg">Shop Now ☀️</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3><span>☀️</span> SOLANA</h3>
+          <p>Summer fashion born from Madrid's golden light. Designed for real heat, real bodies, and real moments.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="products.html">SOL MINI</a></li>
+            <li><a href="products.html">FLOW SHORT</a></li>
+            <li><a href="products.html">OMBLIGO TOP</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">TikTok</a></li>
+            <li><a href="#">Pinterest</a></li>
+            <li><a href="mailto:hola@solana-madrid.com">hola@solana-madrid.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 SOLANA. Made in Madrid with ☀️. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== THEME CUSTOMIZER ===== -->
+  <button class="theme-toggle-btn" id="theme-toggle" aria-label="Customize theme" title="Customize colors">🎨</button>
+  <div class="theme-panel" id="theme-panel">
+    <h3>🎨 Customize Theme</h3>
+    <div class="theme-presets">
+      <button class="theme-preset active" data-theme="bright">
+        <div class="swatch"><span style="background:#FF6B35;"></span><span style="background:#FFF9F0;"></span><span style="background:#F4A261;"></span></div>
+        Bright
+      </button>
+      <button class="theme-preset" data-theme="dark">
+        <div class="swatch"><span style="background:#FF8C5A;"></span><span style="background:#1A1410;"></span><span style="background:#E8956A;"></span></div>
+        Dark
+      </button>
+      <button class="theme-preset" data-theme="pastel">
+        <div class="swatch"><span style="background:#E8789A;"></span><span style="background:#FDF2F8;"></span><span style="background:#F0A8C0;"></span></div>
+        Pastel
+      </button>
+      <button class="theme-preset" data-theme="ocean">
+        <div class="swatch"><span style="background:#0EA5E9;"></span><span style="background:#F0F7FA;"></span><span style="background:#38BDF8;"></span></div>
+        Ocean
+      </button>
+    </div>
+    <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:6px;">Accent Color</label>
+    <input type="color" id="accent-picker" value="#FF6B35" style="width:100%; height:40px; border:none; border-radius:8px; cursor:pointer;">
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

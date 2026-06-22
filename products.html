@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collection — SOLANA</title>
+  <meta name="description" content="Shop the SOLANA summer collection: SOL MINI skirts, FLOW SHORT anti-chafe shorts, and OMBLIGO TOP belly-button tops.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <span>☀️</span> SOLANA
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Collection</a></li>
+        <li><a href="cart.html" class="cart-link">🛒 Cart <span class="cart-count" id="cart-count">0</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== PRODUCTS PAGE ===== -->
+  <section class="section" style="padding-top: 60px;">
+    <div class="container">
+      <div class="section-header">
+        <h1 style="font-size: clamp(2rem, 5vw, 3.5rem);">The Collection</h1>
+        <p>Three silhouettes. Multiple colorways. One summer.</p>
+      </div>
+
+      <!-- Category filter -->
+      <div style="display:flex; gap:12px; justify-content:center; margin-bottom: 48px; flex-wrap:wrap;">
+        <button class="btn btn-outline btn-sm filter-btn active" data-filter="all">All</button>
+        <button class="btn btn-outline btn-sm filter-btn" data-filter="skirt">🎀 Mini Skirts</button>
+        <button class="btn btn-outline btn-sm filter-btn" data-filter="shorts">🩳 Shorts</button>
+        <button class="btn btn-outline btn-sm filter-btn" data-filter="top">👚 Tops</button>
+      </div>
+
+      <div class="products-grid" id="all-products">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3><span>☀️</span> SOLANA</h3>
+          <p>Summer fashion born from Madrid's golden light. Designed for real heat, real bodies, and real moments.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="products.html">SOL MINI</a></li>
+            <li><a href="products.html">FLOW SHORT</a></li>
+            <li><a href="products.html">OMBLIGO TOP</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">TikTok</a></li>
+            <li><a href="#">Pinterest</a></li>
+            <li><a href="mailto:hola@solana-madrid.com">hola@solana-madrid.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 SOLANA. Made in Madrid with ☀️. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== THEME CUSTOMIZER ===== -->
+  <button class="theme-toggle-btn" id="theme-toggle" aria-label="Customize theme" title="Customize colors">🎨</button>
+  <div class="theme-panel" id="theme-panel">
+    <h3>🎨 Customize Theme</h3>
+    <div class="theme-presets">
+      <button class="theme-preset active" data-theme="bright">
+        <div class="swatch"><span style="background:#FF6B35;"></span><span style="background:#FFF9F0;"></span><span style="background:#F4A261;"></span></div>
+        Bright
+      </button>
+      <button class="theme-preset" data-theme="dark">
+        <div class="swatch"><span style="background:#FF8C5A;"></span><span style="background:#1A1410;"></span><span style="background:#E8956A;"></span></div>
+        Dark
+      </button>
+      <button class="theme-preset" data-theme="pastel">
+        <div class="swatch"><span style="background:#E8789A;"></span><span style="background:#FDF2F8;"></span><span style="background:#F0A8C0;"></span></div>
+        Pastel
+      </button>
+      <button class="theme-preset" data-theme="ocean">
+        <div class="swatch"><span style="background:#0EA5E9;"></span><span style="background:#F0F7FA;"></span><span style="background:#38BDF8;"></span></div>
+        Ocean
+      </button>
+    </div>
+    <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:6px;">Accent Color</label>
+    <input type="color" id="accent-picker" value="#FF6B35" style="width:100%; height:40px; border:none; border-radius:8px; cursor:pointer;">
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

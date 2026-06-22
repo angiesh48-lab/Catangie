@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — SOLANA</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <span>☀️</span> SOLANA
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Collection</a></li>
+        <li><a href="cart.html" class="cart-link">🛒 Cart <span class="cart-count" id="cart-count">0</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== CHECKOUT ===== -->
+  <section class="checkout-page">
+    <div class="container">
+      <h1>Checkout</h1>
+      <div class="checkout-layout">
+
+        <!-- Left: Billing & Payment -->
+        <div>
+          <!-- Shipping Info -->
+          <div class="checkout-form-section" style="margin-bottom: 24px;">
+            <h2>📦 Shipping Information</h2>
+            <form id="shipping-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="first-name">First Name *</label>
+                  <input type="text" id="first-name" placeholder="María" required>
+                </div>
+                <div class="form-group">
+                  <label for="last-name">Last Name *</label>
+                  <input type="text" id="last-name" placeholder="García" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" placeholder="maria@email.com" required>
+              </div>
+              <div class="form-group">
+                <label for="address">Address *</label>
+                <input type="text" id="address" placeholder="Calle Gran Vía 42, 2ºB" required>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="city">City *</label>
+                  <input type="text" id="city" placeholder="Madrid" required>
+                </div>
+                <div class="form-group">
+                  <label for="postal">Postal Code *</label>
+                  <input type="text" id="postal" placeholder="28013" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="country">Country</label>
+                <select id="country">
+                  <option value="ES" selected>Spain</option>
+                  <option value="PT">Portugal</option>
+                  <option value="FR">France</option>
+                  <option value="IT">Italy</option>
+                  <option value="DE">Germany</option>
+                  <option value="UK">United Kingdom</option>
+                  <option value="US">United States</option>
+                </select>
+              </div>
+            </form>
+          </div>
+
+          <!-- Payment Method -->
+          <div class="checkout-form-section">
+            <h2>💳 Payment Method</h2>
+            <div class="payment-methods" id="payment-methods">
+              <div class="payment-method selected" data-method="card">
+                <span class="pm-icon">💳</span>
+                <span class="pm-label">Credit Card</span>
+              </div>
+              <div class="payment-method" data-method="paypal">
+                <span class="pm-icon">🅿️</span>
+                <span class="pm-label">PayPal</span>
+              </div>
+              <div class="payment-method" data-method="bizum">
+                <span class="pm-icon">📱</span>
+                <span class="pm-label">Bizum</span>
+              </div>
+            </div>
+
+            <!-- Card Payment Form -->
+            <form id="card-form">
+              <div class="form-group">
+                <label for="card-name">Name on Card *</label>
+                <input type="text" id="card-name" placeholder="María García" required>
+              </div>
+              <div class="form-group">
+                <label for="card-number">Card Number *</label>
+                <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="card-expiry">Expiry Date *</label>
+                  <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5" required>
+                </div>
+                <div class="form-group">
+                  <label for="card-cvc">CVC *</label>
+                  <input type="text" id="card-cvc" placeholder="123" maxlength="4" required>
+                </div>
+              </div>
+            </form>
+
+            <!-- PayPal Section (hidden by default) -->
+            <div id="paypal-section" style="display:none; text-align:center; padding: 20px 0;">
+              <p style="margin-bottom: 16px; color: var(--color-text-light);">
+                You'll be redirected to PayPal to complete your purchase securely.
+              </p>
+              <div id="paypal-button-container"></div>
+            </div>
+
+            <!-- Bizum Section (hidden by default) -->
+            <div id="bizum-section" style="display:none; text-align:center; padding: 20px 0;">
+              <p style="margin-bottom: 16px; color: var(--color-text-light);">
+                Enter your phone number linked to Bizum.
+              </p>
+              <div class="form-group" style="max-width: 300px; margin: 0 auto;">
+                <label for="bizum-phone">Phone Number *</label>
+                <input type="tel" id="bizum-phone" placeholder="+34 612 345 678">
+              </div>
+            </div>
+
+            <!-- Place Order Button -->
+            <button class="btn btn-primary btn-lg btn-block" id="place-order" style="margin-top: 24px;">
+              Place Order — <span id="checkout-total">€0.00</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Order Summary -->
+        <div class="order-summary" id="order-summary">
+          <h2>Order Summary</h2>
+          <div id="order-items">
+            <!-- Populated by JS -->
+          </div>
+          <div class="summary-row" style="margin-top: 12px;">
+            <span>Subtotal</span>
+            <span id="summary-subtotal">€0.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span id="summary-shipping">Free</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span id="summary-total">€0.00</span>
+          </div>
+          <p style="font-size:0.8rem; color:var(--color-text-light); margin-top:12px;">
+            🔒 Secure checkout · SSL encrypted
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SUCCESS OVERLAY ===== -->
+  <div id="order-success" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:500; display:none; align-items:center; justify-content:center;">
+    <div style="background:var(--color-card-bg); border-radius:var(--radius-xl); padding:48px; text-align:center; max-width:480px; margin:24px;">
+      <span style="font-size:4rem; display:block; margin-bottom:16px;">🎉</span>
+      <h2 style="margin-bottom:8px;">Order Confirmed!</h2>
+      <p style="color:var(--color-text-light); margin-bottom:24px;">
+        Thank you for your order. You'll receive a confirmation email shortly.
+        Your SOLANA pieces are being prepared with ☀️ love in Madrid.
+      </p>
+      <p style="font-size:0.85rem; color:var(--color-text-light); margin-bottom:24px;">
+        Order #<strong id="order-number">SOL-0000</strong>
+      </p>
+      <a href="index.html" class="btn btn-primary">Continue Shopping</a>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3><span>☀️</span> SOLANA</h3>
+          <p>Summer fashion born from Madrid's golden light.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="products.html">SOL MINI</a></li>
+            <li><a href="products.html">FLOW SHORT</a></li>
+            <li><a href="products.html">OMBLIGO TOP</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">TikTok</a></li>
+            <li><a href="mailto:hola@solana-madrid.com">hola@solana-madrid.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 SOLANA. Made in Madrid with ☀️.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== THEME CUSTOMIZER ===== -->
+  <button class="theme-toggle-btn" id="theme-toggle" aria-label="Customize theme" title="Customize colors">🎨</button>
+  <div class="theme-panel" id="theme-panel">
+    <h3>🎨 Customize Theme</h3>
+    <div class="theme-presets">
+      <button class="theme-preset active" data-theme="bright">
+        <div class="swatch"><span style="background:#FF6B35;"></span><span style="background:#FFF9F0;"></span><span style="background:#F4A261;"></span></div>
+        Bright
+      </button>
+      <button class="theme-preset" data-theme="dark">
+        <div class="swatch"><span style="background:#FF8C5A;"></span><span style="background:#1A1410;"></span><span style="background:#E8956A;"></span></div>
+        Dark
+      </button>
+      <button class="theme-preset" data-theme="pastel">
+        <div class="swatch"><span style="background:#E8789A;"></span><span style="background:#FDF2F8;"></span><span style="background:#F0A8C0;"></span></div>
+        Pastel
+      </button>
+      <button class="theme-preset" data-theme="ocean">
+        <div class="swatch"><span style="background:#0EA5E9;"></span><span style="background:#F0F7FA;"></span><span style="background:#38BDF8;"></span></div>
+        Ocean
+      </button>
+    </div>
+    <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:6px;">Accent Color</label>
+    <input type="color" id="accent-picker" value="#FF6B35" style="width:100%; height:40px; border:none; border-radius:8px; cursor:pointer;">
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- PayPal SDK (sandbox) -->
+  <script src="https://www.paypal.com/sdk/js?client-id=test&currency=EUR" data-namespace="paypal_sdk"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
